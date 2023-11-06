@@ -50,6 +50,21 @@ public class Vacancy_page extends BaseClass {
 
 	@FindBy(xpath = "(//button[@type='submit'])")
 	WebElement	submitbuttonElement;
+
+	@FindBy(xpath = "(//i[@class='oxd-icon bi-trash'])[1]")
+	WebElement deleteIconElement;
+
+	@FindBy(xpath = "(//button[normalize-space()='Yes, Delete']")
+	WebElement deleteIcononpopup;
+
+	@FindBy(xpath = "(//i[@class='oxd-icon bi-pencil-fill'])[1]")
+	WebElement editIconElement;
+
+	@FindBy(xpath = "//button[text()=' Cancel ']")
+	WebElement CanclebuttonElement;
+
+	@FindBy(xpath = "//div[text()='Browse']")
+	WebElement broswerbuttonElement;
 	public void Vacnacypage() {
 
 		RequrimentLinkElement.click();
@@ -80,6 +95,7 @@ public class Vacancy_page extends BaseClass {
 	public void No_ofVacancy() {
 		Numberofvacancy.sendKeys("20");
 	}
+
 	public void Switchbutton() throws InterruptedException {
 		fristSwitchElement.click();
 		Thread.sleep(2000);
@@ -88,5 +104,39 @@ public class Vacancy_page extends BaseClass {
 		String A = driver.getTitle();
 		Assert.assertEquals(A, true);
 	}
+
+	public void VerifyEdit () {
+		editIconElement.click();
+		vaccanametextbox.sendKeys("QA Engineer");
+		jobTitlElement.click();
+		ChiefExecutiveOfficer.click();
+		DescriptionBox.sendKeys("4-5 years of experience");
+		HiringManager.sendKeys("joyt");
+		Numberofvacancy.sendKeys("10");
+		submitbuttonElement.click();
+
+	}
+	public void VerifyEdit1() {
+		editIconElement.click();
+		vaccanametextbox.sendKeys("QA Engineer");
+		jobTitlElement.click();
+		ChiefExecutiveOfficer.click();
+		DescriptionBox.sendKeys("4-5 years of experience");
+		HiringManager.sendKeys("joyt");
+		Numberofvacancy.sendKeys("10");
+		CanclebuttonElement.click();
+
+	}
+	public void AddAcchement() {
+		broswerbuttonElement.sendKeys("C:\\Users\\DELL\\OneDrive\\Documents\\videozen-automatedtests\\backgroundmusic\\music.jpg");
+		submitbuttonElement.click();
+
+	}
+
+	public void verifyDelete() {
+		deleteIconElement.click();
+		deleteIcononpopup.click();
+	}
+
 }
 

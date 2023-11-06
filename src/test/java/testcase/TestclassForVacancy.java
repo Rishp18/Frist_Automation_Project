@@ -7,9 +7,9 @@ import Scripts.Glogin;
 import Scripts.Vacancy_page;
 import base.BaseClass;
 
-public class testclass extends BaseClass {
+public class TestclassForVacancy extends BaseClass {
 
-	public testclass() {
+	public TestclassForVacancy() {
 		PageFactory.initElements(driver, this);
 	}
 	@Test(priority = 0)
@@ -53,6 +53,25 @@ public class testclass extends BaseClass {
 	public void switchbuttons() throws InterruptedException {
 		Vacancy_page vp=new Vacancy_page();
 		vp.Switchbutton();
+	}
+	@Test(priority = 7)
+	public void DeleteIcon() {
+		Vacancy_page vp=new Vacancy_page();
+		vp.verifyDelete();
+	}
+	@Test(priority = 8)
+	public void Edit() {
+		Vacancy_page vp=new Vacancy_page();
+		vp.VerifyEdit();
+	}
+	@Test(priority = 9)
+	public void Edit1() {
+		Vacancy_page vp=new Vacancy_page();
+		vp.VerifyEdit1();
+	}
+	@Test(priority = 10)
+	public void AddAttachment() {
 
 	}
+
 }
